@@ -1,0 +1,150 @@
+// scss-lint:disable PropertySortOrder HexNotation SelectorFormat
+
+@import '_normalise';
+
+// Colors
+$base-color: #e7e7e7;
+
+$c-primary: #D4AD40;
+$c-secondary: #DA8630;
+$c-dark: #303030;
+$c-light: #fff;
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Black+Ops+One);
+
+
+@mixin black-n-white {
+  background-color: $c-light;
+  color: $c-dark;
+}
+
+@mixin white-n-black {
+  background-color: $c-dark;
+  color: $c-light;
+}
+
+@mixin click-highlight {
+  &:active {
+    filter: brightness(110%);
+  }
+}
+// -------------------------------------------------------------------
+//     Container
+// -------------------------------------------------------------------
+
+.pp-container {
+  @include black-n-white();
+  font-family: 'Black Ops One', cursive;
+  font-size: 16px;
+
+  width: 100%;
+  height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+// -------------------------------------------------------------------
+//     Header
+// -------------------------------------------------------------------
+.pp-header {
+  @include white-n-black();
+  height: 2em;
+  width: 100%;
+  display: flex;
+}
+
+.pp-header_legend {
+  text-align: center;
+  margin: auto;
+}
+
+.pp-header_turn {
+  color: $c-primary;
+}
+// -------------------------------------------------------------------
+//     Scores
+// -------------------------------------------------------------------
+.pp-scores {
+  display: flex;
+  flex-flow: row wrap;
+
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.pp-score {
+  display: flex;
+  flex-flow: row wrap;
+  font-family: inherit;
+  flex: 1 1 0;
+
+  &:nth-of-type(1) {
+    @include black-n-white();
+  }
+
+  &:nth-of-type(2) {
+    @include white-n-black();
+  }
+}
+
+.pp-score_number {
+  display: block;
+  flex: 0 2 100%;
+  margin: auto;
+
+  font-family: inherit;
+  text-align: center;
+  font-size: 25vw;
+
+  color: inherit;
+}
+
+%pp-score_button {
+  @include  click-highlight();
+  flex: 1 1;
+  align-self: flex-end;
+  margin: 0;
+
+  height: 1.2em;
+  line-height: 1.2em;
+  font-size: 3em;
+
+  color: $c-light;
+  border: 0;
+}
+
+.pp-score_add {
+  @extend %pp-score_button;
+  background-color: lighten($c-dark, 30);
+}
+
+.pp-score_remove {
+  @extend %pp-score_button;
+  background-color: lighten($c-dark, 50);
+}
+
+// -------------------------------------------------------------------
+//     Reset
+// -------------------------------------------------------------------
+
+.pp-reset {
+  height: 2em;
+  width: 100%;
+}
+
+.pp-reset_button {
+  @include  click-highlight();
+  width: 100%;
+  height: 100%;
+
+  background-color: $c-dark;
+  color: $c-light;
+  margin: 0;
+  border: 0;
+}
