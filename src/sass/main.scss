@@ -11,8 +11,12 @@ $c-dark: #303030;
 $c-light: #fff;
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Black+Ops+One);
-
+@font-face {
+  font-family: 'Black Ops One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Black Ops One'), local('BlackOpsOne-Regular'), url('/assets/BlackOpsOne.woff') format('woff');
+}
 
 @mixin black-n-white {
   background-color: $c-light;
