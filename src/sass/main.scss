@@ -29,6 +29,15 @@ $c-light: #fff;
     filter: brightness(110%);
   }
 }
+
+%pp-button {
+  outline: none;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
 // -------------------------------------------------------------------
 //     Container
 // -------------------------------------------------------------------
@@ -106,6 +115,7 @@ $c-light: #fff;
 }
 
 %pp-score_button {
+  @extend %pp-button;
   @include  click-highlight();
   flex: 1 1;
   align-self: flex-end;
@@ -139,6 +149,7 @@ $c-light: #fff;
 }
 
 .pp-reset_button {
+  @extend %pp-button;
   @include  click-highlight();
   width: 100%;
   height: 100%;
