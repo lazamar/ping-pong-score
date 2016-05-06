@@ -1,0 +1,48 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:bold);
+
+/* Global ------------------------------------------------------ */
+
+html {
+  height: 100%;
+  background: url(http://s.cdpn.io/79/glow.png) no-repeat fixed center top,
+    url("http://s.cdpn.io/79/light-noise.gif") repeat fixed 0 0;
+  font: 62.5%/1 "Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.txt[contenteditable] {
+  outline: none;
+}
+
+
+
+/* text ------------------------------------------------------ */
+
+
+.carved {
+  font: bold 12em 'Droid Sans', sans-serif;
+  color: transparent;
+  text-stroke: 2px rgba(0,0,0,0.2); /* Text stroke */
+}
+
+.carved:hover {
+  text-stroke: 0;
+  color: transparent;
+  background-color: rgba(82,96,117,0.5);
+  -webkit-background-clip: text;
+  text-shadow: rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;
+  transition: text-shadow .1s ease-out, background-color .2s ease-out;
+}
+
+.carved:focus {
+  outline: none;
+}

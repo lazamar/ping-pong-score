@@ -1,6 +1,8 @@
 // scss-lint:disable PropertySortOrder HexNotation SelectorFormat
 
-@import '_normalise';
+@import 'normalise';
+@import 'bonbon';
+@import 'carved';
 
 // Colors
 $base-color: #e7e7e7;
@@ -18,14 +20,10 @@ $c-light: #fff;
   src: local('Black Ops One'), local('BlackOpsOne-Regular'), url('/assets/BlackOpsOne.woff') format('woff');
 }
 
-@mixin black-n-white {
-  background-color: $c-light;
-  color: $c-dark;
-}
-
-@mixin white-n-black {
-  background-color: $c-dark;
-  color: $c-light;
+@font-face {
+  font-family: 'Alba';
+  font-style: normal;
+  src: url('/assets/alba.super.ttf') format('ttf');
 }
 
 @mixin click-highlight {
@@ -47,9 +45,11 @@ $c-light: #fff;
 // -------------------------------------------------------------------
 
 .pp-container {
-  @include black-n-white();
   font-family: 'Black Ops One', cursive;
   font-size: 16px;
+  background-image:
+    url("./assets/texture.png"),
+    radial-gradient(top center, #1EE9F7, #243DF1 750px);;
 
   width: 100%;
   height: 100%;
@@ -66,7 +66,6 @@ $c-light: #fff;
 //     Header
 // -------------------------------------------------------------------
 .pp-header {
-  @include white-n-black();
   height: 2em;
   width: 100%;
   display: flex;
@@ -96,14 +95,7 @@ $c-light: #fff;
   flex-flow: row wrap;
   font-family: inherit;
   flex: 1 1 0;
-
-  &:nth-of-type(1) {
-    @include black-n-white();
-  }
-
-  &:nth-of-type(2) {
-    @include white-n-black();
-  }
+  justify-content: space-around;
 }
 
 .pp-score_number {
@@ -114,23 +106,36 @@ $c-light: #fff;
   font-family: inherit;
   text-align: center;
   font-size: 25vw;
+  line-height: 1em;
 
   color: inherit;
+  color: white;
+  text-shadow: 0 1px hsl(0,0%,85%),
+             0 2px hsl(0,0%,80%),
+             0 3px hsl(0,0%,75%),
+             0 4px hsl(0,0%,70%),
+             0 5px hsl(0,0%,65%),
+             0 5px 10px black;
 }
 
 %pp-score_button {
   @extend %pp-button;
-  @include  click-highlight();
-  flex: 1 1;
+  // @include  click-highlight();
+  flex: 1 1 3em;
   align-self: flex-end;
-  margin: 0;
+  margin: 0 0 .6em 0;
+  max-width: 40%;
 
-  height: 1.2em;
+  // height: 1.2em;
+  text-align: center;
   line-height: 1.2em;
   font-size: 3em;
 
-  color: $c-light;
   border: 0;
+
+  &:before {
+    margin: 0;
+  }
 }
 
 .pp-score_add {
@@ -148,7 +153,7 @@ $c-light: #fff;
 // -------------------------------------------------------------------
 
 .pp-reset {
-  height: 2em;
+  // height: 2em;
   width: 100%;
 }
 
@@ -162,4 +167,7 @@ $c-light: #fff;
   color: $c-light;
   margin: 0;
   border: 0;
+  &:before {
+    margin: 0;
+  }
 }

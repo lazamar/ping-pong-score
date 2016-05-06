@@ -50,10 +50,7 @@ gulp.task('rollup-module', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch('./src/**/*.js', ['build']);
-  gulp.watch('./src/sass/*.*', ['sass']);
-  gulp.watch('./src/assets/*.*', ['assets']);
-  gulp.watch('./src/*.*', ['main-files']);
+  gulp.watch('./src/**/*.*', ['build']);
 });
 
 gulp.task('webserver', () => {
