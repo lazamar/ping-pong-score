@@ -5,7 +5,7 @@
  */
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:bold+Lobster);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
-@import url(pictos/pictos.css);
+@import url(./pictos/pictos.css);
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:bold);
 html {
   font-family: sans-serif;
@@ -842,12 +842,7 @@ body {
   font-family: 'Black Ops One';
   font-style: normal;
   font-weight: 400;
-  src: local("Black Ops One"), local("BlackOpsOne-Regular"), url("/assets/BlackOpsOne.woff") format("woff"); }
-
-@font-face {
-  font-family: 'Alba';
-  font-style: normal;
-  src: url("/assets/alba.super.ttf") format("ttf"); }
+  src: local("Black Ops One"), local("BlackOpsOne-Regular"), url("./assets/BlackOpsOne.woff") format("woff"); }
 
 .pp-score_add, .pp-score_remove, .pp-reset_button {
   outline: none; }
@@ -951,7 +946,7 @@ body {
   max-width: 40%;
   text-align: center;
   line-height: 1.2em;
-  font-size: 3em;
+  font-size: 2em;
   border: 0; }
   .pp-score_add:before, .pp-score_remove:before {
     margin: 0; }
