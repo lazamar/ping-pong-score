@@ -17,13 +17,7 @@ $c-light: #fff;
   font-family: 'Black Ops One';
   font-style: normal;
   font-weight: 400;
-  src: local('Black Ops One'), local('BlackOpsOne-Regular'), url('/assets/BlackOpsOne.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Alba';
-  font-style: normal;
-  src: url('/assets/alba.super.ttf') format('ttf');
+  src: local('Black Ops One'), local('BlackOpsOne-Regular'), url('./assets/BlackOpsOne.woff') format('woff');
 }
 
 @mixin click-highlight {
@@ -129,7 +123,7 @@ $c-light: #fff;
   // height: 1.2em;
   text-align: center;
   line-height: 1.2em;
-  font-size: 3em;
+  font-size: 2em;
 
   border: 0;
 
