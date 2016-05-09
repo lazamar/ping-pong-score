@@ -37,17 +37,23 @@ export default class Score {
     return this.score;
   }
 
-  _updateScore(newScore) {
+  setScore(newScore, noNotify) {
+    return this._updateScore(newScore, noNotify);
+  }
+
+  _updateScore(newScore, noNotify) {
     if (typeof newScore !== 'number') {
       throw new Error(`Invalid socore value: ${newScore}`);
-    } if (newScore < 0) {
+    } else if (newScore < 0) {
       this._blinkRed();
       return false;
+    } else if (newScore === this.score) {
+      return true;
     }
 
     this.score = newScore;
     this.banner.textContent = newScore;
-    this._notifyScoreChange();
+    if (!noNotify) { this._notifyScoreChange(); }
     return true;
   }
 
