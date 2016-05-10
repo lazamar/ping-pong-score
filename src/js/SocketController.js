@@ -1,16 +1,19 @@
 export default class SocketController {
-  constructor(socket, ...scoreControllers) {
+  constructor(socket, turnController, ...scoreControllers) {
     this.scoreControllers = scoreControllers;
     this.socket = socket;
 
-    socket.on('score change', (newScore) => {
-      this.scoreControllers[0].setScore(newScore.team1Score);
-      this.scoreControllers[1].setScore(newScore.team2Score);
+    socket.on('server score change', (newScore) => {
+      console.log('Received change message');
+      this.scoreControllers[0].setScore(newScore.team1Score, true);
+      this.scoreControllers[1].setScore(newScore.team2Score, true);
+      turnController.updateTurns();
     });
 
     scoreControllers.forEach((scoreController) => {
       scoreController.onScoreChange(() => {
-        socket.emit('score change', this._getScore());
+        socket.emit('client score change', this._getScore());
+        console.log('Emmitted change message');
       });
     });
   }

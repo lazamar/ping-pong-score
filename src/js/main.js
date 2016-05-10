@@ -23,7 +23,33 @@ function init() {
 
   if (typeof io !== 'undefined') {
     const socket = io();
-    const socketController = new SocketController(socket, score1, score2); // eslint-disable-line no-unused-vars, max-len
+    const socketController = new SocketController(socket, turnController, score1, score2); // eslint-disable-line no-unused-vars, max-len
+  }
+
+  const allButtons = document.querySelectorAll('button');
+  handleButtonClicks(allButtons);
+}
+
+function handleButtonClicks(buttons) {
+  const pressedClass = 'pressed';
+  const delay = '100';
+
+  [].forEach.call(buttons, (button) => {
+    button.addEventListener('click', () => {
+      clearTimeout(button.timeout);
+      setPressed(button);
+      button.timeout = setTimeout(() => {
+        setNotPressed(button);
+      }, delay);
+    });
+  });
+
+  function setPressed(button) {
+    button.classList.add(pressedClass);
+  }
+
+  function setNotPressed(button) {
+    button.classList.remove(pressedClass);
   }
 }
 

@@ -172,7 +172,7 @@ button.button:hover {
 .button.transparent {
 	color: 	rgba(0,0,0,0.5) !important;
 }
-.button.transparent, .button.transparent:hover, .button.transparent:active {
+.button.transparent, .button.transparent:hover, .button.transparent.pressed {
 	background-color: transparent;
 	background-image: none;
 }
@@ -190,7 +190,7 @@ button.button:hover {
 
 
 
-.button:active {
+.button.pressed {
 	// background-image: 	-webkit-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(noise.png);
 	// background-image: 	-moz-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(noise.png);
 	// background-image: 	gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(noise.png);
@@ -274,8 +274,8 @@ button.button:hover {
     background-image: 		gradient(linear, 0% 0, 100% 0, from( rgba(255,255,255,.55) ), to( rgba(255,255,255,.5) ),
     							color-stop(.5, rgba(255,255,255,0)), color-stop(.8, rgba(255,255,255,0)) );
 }
-.button.glossy:active:after,
-.button.glass:active:after,
+.button.glossy.pressed:after,
+.button.glass.pressed:after,
 .button.disabled:after,
 .button[disabled]:after
  { opacity: .6; }
@@ -287,7 +287,7 @@ button.button:hover {
 .button.glass {
 	text-shadow: rgba(255,255,255,.5) 0 -1px 0, rgba(0,0,0,0.18) 0 .18em .15em;
 }
-.button.glass:active {
+.button.glass.pressed {
 	text-shadow: rgba(255,255,255,.3) 0 1px 0, rgba(0,0,0,0.15) 0 .18em .15em;
 }
 
@@ -438,7 +438,7 @@ button.button:hover {
 	-moz-border-radius: 	.4em .4em 2em 2em / .4em .4em 3em 3em;
 	border-radius: 			.4em .4em 2em 2em / .4em .4em 3em 3em;
 }
-.morph:active {
+.morph.pressed {
 	-webkit-border-radius: 	.3em;
 	-moz-border-radius: 	.3em;
 	border-radius: 			.3em;

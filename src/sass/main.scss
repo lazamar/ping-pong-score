@@ -26,6 +26,16 @@ $c-light: #fff;
   }
 }
 
+@mixin text3D {
+  color: white;
+  text-shadow: 0 1px hsl(0,0%,85%),
+             0 2px hsl(0,0%,80%),
+             0 3px hsl(0,0%,75%),
+             0 4px hsl(0,0%,70%),
+             0 5px hsl(0,0%,65%),
+             0 5px 10px black;
+}
+
 %pp-button {
   outline: none;
 
@@ -63,15 +73,19 @@ $c-light: #fff;
   height: 2em;
   width: 100%;
   display: flex;
+
+  font-size: 2em;
 }
 
 .pp-header_legend {
   text-align: center;
   margin: auto;
+  @include text3D();
 }
 
 .pp-header_turn {
-  color: $c-primary;
+  @include text3D();
+  // color: $c-primary;
 }
 // -------------------------------------------------------------------
 //     Scores
@@ -93,6 +107,8 @@ $c-light: #fff;
 }
 
 .pp-score_number {
+  @include text3D();
+
   display: block;
   flex: 0 2 100%;
   margin: auto;
@@ -101,15 +117,6 @@ $c-light: #fff;
   text-align: center;
   font-size: 25vw;
   line-height: 1em;
-
-  color: inherit;
-  color: white;
-  text-shadow: 0 1px hsl(0,0%,85%),
-             0 2px hsl(0,0%,80%),
-             0 3px hsl(0,0%,75%),
-             0 4px hsl(0,0%,70%),
-             0 5px hsl(0,0%,65%),
-             0 5px 10px black;
 }
 
 %pp-score_button {
